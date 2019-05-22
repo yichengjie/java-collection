@@ -9,11 +9,11 @@ import javax.jms.TextMessage;
 
 import org.apache.activemq.ActiveMQConnectionFactory;
 
-public class ProduceTest {
+public class QueueProduceTest {
 	
 	
 	public static void main(String[] args) throws Exception {
-		ProduceTest produce = new ProduceTest() ;
+		QueueProduceTest produce = new QueueProduceTest() ;
 		produce.testMQProducerQueue();
 	}
 
