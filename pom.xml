@@ -49,4 +49,7 @@
 			</resource>
 		</resources>
 	</build>
+	<modules>
+		<module>activemq-study</module>
+	</modules>
 </project>
