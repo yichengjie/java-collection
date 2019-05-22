@@ -51,5 +51,6 @@
 	</build>
 	<modules>
 		<module>activemq-study</module>
+		<module>activemq-spring-study</module>
 	</modules>
 </project>
