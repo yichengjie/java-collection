@@ -18,4 +18,12 @@ public class IndexController {
 	public String hello() {
 		return "hello" ;
 	}
+	
+	@GetMapping("exception")
+	public String exception() {
+		int a = 1/0 ;
+		return "test" ;
+	}
+	
+	
 }
