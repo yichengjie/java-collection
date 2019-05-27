@@ -21,4 +21,12 @@
         <!-- 后缀 -->
         <property name="suffix" value=".jsp" />
     </bean>
+    
+    <!-- interceptor setting -->
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <mvc:mapping path="/mvc/**"/>
+            <bean class="com.yicj.springmvc.interceptor.MyInterceptor"></bean>
+        </mvc:interceptor>        
+    </mvc:interceptors>
 </beans>
