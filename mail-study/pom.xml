@@ -9,7 +9,6 @@
 	</parent>
 	<artifactId>mail-study</artifactId>
 
-
 	<dependencies>
 
 		<dependency>
