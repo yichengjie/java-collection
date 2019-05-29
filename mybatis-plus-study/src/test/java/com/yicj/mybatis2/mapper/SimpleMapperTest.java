@@ -40,4 +40,15 @@ public class SimpleMapperTest {
     	userService.insertUserWithBackId(user) ;
     }
 
+    @Test
+    public void testInsert(){
+        User user = new User() ;
+        user.setName("yicj");
+        user.setEmail("626659321@qq.com");
+        user.setAge(31);
+        user.setManagerId(1088248166370832385l);
+        user.setCreateTime(LocalDateTime.now());
+        userService.insert(user) ;
+    }
+
 }

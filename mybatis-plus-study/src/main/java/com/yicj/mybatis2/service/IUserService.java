@@ -8,4 +8,5 @@ public interface IUserService {
 	List<User> queryAllUser() ;
 	Integer countAllUser() ;
 	Long insertUserWithBackId(User user) ;
+	Integer insert(User user) ;
 }

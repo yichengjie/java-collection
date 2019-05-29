@@ -24,4 +24,7 @@ mybatis-plus:
 # logging
 logging:
   level:
-    root: INFO
+    root: info
+    com.yicj.mybatis2: debug
+  pattern:
+    console: '%p%m%n'

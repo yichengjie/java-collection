@@ -36,4 +36,9 @@ public class UserServiceImpl implements IUserService{
 		return id ;
 	}
 
+	@Override
+	public Integer insert(User user) {
+		return userMapper.insert(user);
+	}
+
 }
