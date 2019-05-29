@@ -1,33 +1,26 @@
+package com.yicj.mybatis2.mapper;
 import com.yicj.mybatis2.Application;
-import com.yicj.mybatis2.entity.User;
-import com.yicj.mybatis2.mapper.UserMapper;
+import com.yicj.mybatis2.service.IUserService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
-
-import java.util.List;
-
+//https://www.cnblogs.com/java-zhao/p/5350021.html
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = Application.class)
 public class SimpleMapperTest {
-
-    @Autowired
-    private UserMapper userMapper ;
+	@Autowired
+    private IUserService userService ;
 
     @Test
     public void testSelectList(){
-
-        List<User> list = userMapper.selectList(null) ;
-        list.forEach(System.out::println);
+    	userService.queryAllUser() ;
     }
 
     @Test
     public void testSelectCount(){
-        System.out.println("hello world");
-        Integer count = userMapper.selectCount(null) ;
-        System.out.println("=============> "  + count);
+       userService.countAllUser();
     }
 
 }
