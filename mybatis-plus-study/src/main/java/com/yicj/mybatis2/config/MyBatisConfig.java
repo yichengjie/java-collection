@@ -2,6 +2,8 @@ package com.yicj.mybatis2.config;
 
 import java.util.Properties;
 import javax.sql.DataSource;
+
+import com.baomidou.mybatisplus.extension.plugins.PaginationInterceptor;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
@@ -46,5 +48,10 @@ public class MyBatisConfig {
 		props.put("username", username) ;
 		props.put("password", password) ;
 		return DruidDataSourceFactory.createDataSource(props) ;
+	}
+
+	@Bean
+	public PaginationInterceptor paginationInterceptor(){
+		return new PaginationInterceptor() ;
 	}
 }
