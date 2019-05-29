@@ -1,6 +1,17 @@
-spring:
-  datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/test?useSSL=false&serverTimezone=GMT%2B8
-    username: root
-    password: root
+#spring:
+#  datasource:
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#    url: jdbc:mysql://localhost:3306/test?useSSL=false&serverTimezone=GMT%2B8
+#    username: root
+#    password: root
+# druid datasource config
+jdbc:
+  driverClassName: com.mysql.cj.jdbc.Driver
+  #url: jdbc:mysql://localhost:3306/test?zeroDateTimeBehavior=convertToNull&amp;useUnicode=true&amp;characterEncoding=utf-8
+  url: jdbc:mysql://localhost:3306/test?useSSL=false&serverTimezone=GMT%2B8
+  username: root
+  password: root
+# mybatis-plus config
+mybatis-plus: 
+  type-aliases-package: com.yicj.mybatis2.entity
+  mapper-locations: classpath*:/mapper/**Mapper.xml

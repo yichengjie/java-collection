@@ -29,4 +29,11 @@ public class UserServiceImpl implements IUserService{
         return count ;
 	}
 
+	@Override
+	public Long insertUserWithBackId(User user) {
+		Long id = userMapper.insertUserWithBackId(user);
+		System.out.println("================> back id : " + id);
+		return id ;
+	}
+
 }
