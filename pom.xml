@@ -55,5 +55,6 @@
 		<module>spring-mvc-study</module>
 		<module>mail-study</module>
 		<module>mybatis-plus-study</module>
+		<module>mybatis-gen-study</module>
 	</modules>
 </project>
