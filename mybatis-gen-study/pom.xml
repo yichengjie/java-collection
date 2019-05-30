@@ -15,7 +15,6 @@
 		<maven.compiler.encoding>UTF-8</maven.compiler.encoding>
 	</properties>
 
-
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -25,9 +24,9 @@
 		
 		<!-- mybatis与springboot整合 -->
 		<dependency>
-			<groupId>org.mybatis.spring.boot</groupId>
-			<artifactId>mybatis-spring-boot-starter</artifactId>
-			<version>1.3.2</version>
+		    <groupId>org.mybatis.spring.boot</groupId>
+		    <artifactId>mybatis-spring-boot-starter</artifactId>
+		    <version>2.0.0</version>
 		</dependency>
 		
 		<!-- mybatisplus与springboot整合start -->
@@ -81,15 +80,14 @@
 		    <groupId>com.baomidou</groupId>
 		    <artifactId>mybatis-plus-generate</artifactId>
 		    <version>2.3.3</version>
+		    <scope>provided</scope>
 		</dependency>
-		<!-- 只有使用velocity模板的时候才需要引入 -->
 		<dependency>
 			<groupId>org.apache.velocity</groupId>
 			<artifactId>velocity-engine-core</artifactId>
 			<version>2.1</version>
 		</dependency>
 		<!-- 代码生成相关end -->
-		
 		
 		<!-- MP核心库 2.3的版本里不需要单独引入mybatis-plus-generate -->
 		<!-- <dependency>
@@ -102,6 +100,11 @@
 		    <groupId>com.baomidou</groupId>
 		    <artifactId>mybatisplus-spring-boot-starter</artifactId>
 		    <version>1.0.5</version>
+		</dependency> -->
+		<!-- <dependency>
+			<groupId>org.mybatis.spring.boot</groupId>
+			<artifactId>mybatis-spring-boot-starter</artifactId>
+			<version>1.3.2</version>
 		</dependency> -->
 		
 	</dependencies>

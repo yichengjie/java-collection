@@ -1,4 +1,4 @@
-package com.yicj.mybatis2;
+package com.yicj.mybatis2.gen;
 
 
 import com.baomidou.mybatisplus.generator.AutoGenerator;
@@ -71,8 +71,8 @@ public class CodeGeneration001 {
        pc.setController("controller");
        pc.setService("service");
        pc.setServiceImpl("service.impl");
-       pc.setMapper("dao");
-       pc.setEntity("model");
+       pc.setMapper("mapper");
+       pc.setEntity("entity");
        pc.setXml("xml");
        mpg.setPackageInfo(pc);
        // 执行生成
