@@ -1,0 +1,13 @@
+db:
+  url: jdbc:mysql://localhost:3306/test?useSSL=false&serverTimezone=GMT%2B8
+  username: root
+  password: root
+author: yicj
+packageName: com.yicj.demo
+path:
+  controller: controller
+  service: service.impl
+  interf: service
+  dao: dao
+  entity: entity
+  mapper: mappers
