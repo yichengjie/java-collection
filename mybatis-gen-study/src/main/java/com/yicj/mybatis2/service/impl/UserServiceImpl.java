@@ -1,10 +1,8 @@
 package com.yicj.mybatis2.service.impl;
 
-
 import com.yicj.mybatis2.entity.User;
 import com.yicj.mybatis2.mapper.UserMapper;
 import com.yicj.mybatis2.service.UserService;
-//import com.baomidou.mybatisplus.service.impl.ServiceImpl;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 
@@ -14,7 +12,7 @@ import org.springframework.stereotype.Service;
  * </p>
  *
  * @author yicj
- * @since 2019-05-30
+ * @since 2019-06-02
  */
 @Service
 public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements UserService {

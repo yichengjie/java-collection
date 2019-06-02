@@ -1,7 +1,6 @@
 package com.yicj.mybatis2.entity;
 
-import java.util.Date;
-import com.baomidou.mybatisplus.annotations.TableField;
+import java.time.LocalDateTime;
 import java.io.Serializable;
 
 /**
@@ -10,7 +9,7 @@ import java.io.Serializable;
  * </p>
  *
  * @author yicj
- * @since 2019-05-30
+ * @since 2019-06-02
  */
 public class User implements Serializable {
 
@@ -20,28 +19,31 @@ public class User implements Serializable {
      * 主键
      */
     private Long id;
+
     /**
      * 姓名
      */
     private String name;
+
     /**
      * 年龄
      */
     private Integer age;
+
     /**
      * 邮箱
      */
     private String email;
+
     /**
      * 直属上级id
      */
-    @TableField("manager_id")
     private Long managerId;
+
     /**
      * 创建时间
      */
-    @TableField("create_time")
-    private Date createTime;
+    private LocalDateTime createTime;
 
 
     public Long getId() {
@@ -84,18 +86,18 @@ public class User implements Serializable {
         this.managerId = managerId;
     }
 
-    public Date getCreateTime() {
+    public LocalDateTime getCreateTime() {
         return createTime;
     }
 
-    public void setCreateTime(Date createTime) {
+    public void setCreateTime(LocalDateTime createTime) {
         this.createTime = createTime;
     }
 
     @Override
     public String toString() {
         return "User{" +
-        ", id=" + id +
+        "id=" + id +
         ", name=" + name +
         ", age=" + age +
         ", email=" + email +
