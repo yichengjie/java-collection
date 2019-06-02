@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+		
+	<!-- 配置自动扫描的包，使其自动注入到IOC容器 -->
+	<context:component-scan base-package="com.yicj.study.mybatis" />
+	<!-- 导入资源文件 -->
+	<context:property-placeholder location="classpath:db.properties" />
+	
+	<bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource">
+	    <property name="driverClassName" value="${jdbc.driverClass}"></property>
+	    <property name="url" value="${jdbc.jdbcUrl}"></property>
+	    <property name="username" value="${jdbc.user}"></property>
+	    <property name="password" value="${jdbc.password}"></property>
+	</bean>
+	
+	<!-- 配置MyBatis的SqlSession -->
+	<bean id="sqlSessionFactory"
+		class="com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<!-- 配置MyBatis的配置的文件 
+		<property name="configLocation" value="classpath:mybatis.xml" />-->
+	    <property name="mapperLocations" value="classpath:com/yicj/study/mybatis/xml/*Mapper.xml" />
+		<property name="typeAliasesPackage" value="com.yicj.study.mybatis.entity" />
+		<property name="configuration"  ref="configuration"/>
+		<!-- <property name="globalConfig" ref="globalConfig"  />  -->
+		<property name="plugins">
+		   <list>
+		       <!-- 注册分页插件 -->
+		       <bean  class="com.baomidou.mybatisplus.extension.plugins.PaginationInterceptor"></bean>
+		       <!-- 注册性能分析插件 -->
+		       <bean  class="com.baomidou.mybatisplus.extension.plugins.PerformanceInterceptor">
+		           <property name="format" value="true" />
+		       </bean>
+		   </list>
+		</property>
+	</bean>
+	
+	<bean id ="configuration" class="com.baomidou.mybatisplus.core.MybatisConfiguration">
+      <property name="mapUnderscoreToCamelCase" value="true"/>
+    </bean>
+	
+	<!-- MP的全局策略配置 -->
+	<!-- <bean id="globalConfig" class="com.baomidou.mybatisplus.core.config.GlobalConfig">
+        <property name="dbConfig" ref="dbConfig"/>
+    </bean>
+    
+    <bean id="dbConfig" class="com.baomidou.mybatisplus.core.config.GlobalConfig.DbConfig">
+        <property name="keyGenerator" ref="keyGenerator"/>
+    </bean> -->
+    
+	
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+		<!-- 自动扫描 com.imooc.dao下的interface,并加入IOC容器 -->
+		<property name="basePackage" value="com.yicj.study.mybatis.mapper" />
+		<property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
+	</bean>
+	
+	<!-- 开启事务 -->
+	<bean id="transactionManager"
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+	
+	<!-- 可通过注解控制事务 -->
+	<tx:annotation-driven transaction-manager="transactionManager" />
+	
+</beans>

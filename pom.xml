@@ -58,5 +58,6 @@
 		<module>mybatis-gen-study</module>
 		<module>code-gen-study</module>
 		<module>code-gen2-study</module>
+		<module>mybatis-plus-study2</module>
 	</modules>
 </project>
