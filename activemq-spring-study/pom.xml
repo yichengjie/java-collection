@@ -11,7 +11,7 @@
    <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-        <fastjson.vesrion>1.2.35</fastjson.vesrion>
+        <fastjson.vesrion>1.2.83</fastjson.vesrion>
         <activemq-pool.version>5.15.0</activemq-pool.version>
         <spring.version>4.3.10.RELEASE</spring.version>
         <junit.version>4.12</junit.version>
